@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "LibRawSharp": {
+      "commandName": "Project",
+      "nativeDebugging": true
+    }
+  }
+}

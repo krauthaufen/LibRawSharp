@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <DisableImplicitFSharpCoreReference>true</DisableImplicitFSharpCoreReference>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>..\..\bin\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <OutputPath>..\..\bin\Release</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+
+    <Compile Include="LibRaw.fs" />
+  </ItemGroup>
+
+
+  <Target Name="CopyNative" AfterTargets="Build">
+    <Copy Condition="'$(Configuration)' != 'Debug'" SourceFiles="$(ProjectDir)..\..\lib\Native\LibRawSharp\windows\AMD64\LibRawNative.dll" DestinationFolder="$(OutputPath)" ContinueOnError="true" />
+    <Copy SourceFiles="$(ProjectDir)..\..\lib\Native\LibRawSharp\windows\AMD64\libraw.dll" DestinationFolder="$(OutputPath)" ContinueOnError="true" />
+    <Copy Condition="'$(Configuration)' != 'Debug'" SourceFiles="$(ProjectDir)..\..\lib\Native\LibRawSharp\windows\AMD64\LibRawNative.dll" DestinationFolder="$(OutputPath)..\netcoreapp3.1" ContinueOnError="true" />
+    <Copy SourceFiles="$(ProjectDir)..\..\lib\Native\LibRawSharp\windows\AMD64\libraw.dll" DestinationFolder="$(OutputPath)..\netcoreapp3.1" ContinueOnError="true" />
+  </Target>
+
+  <Import Project="..\..\.paket\Paket.Restore.targets" />
+</Project>

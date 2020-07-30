@@ -1,0 +1,16 @@
+source https://api.nuget.org/v3/index.json
+framework: netstandard2.0, netcoreapp3.1
+storage: none
+
+nuget FSharp.Core                           >= 4.6.2 lowest_matching: true
+                                            
+nuget Aardvark.Base                         ~> 5.0.10
+nuget Aardvark.Base.FSharp                  ~> 5.0.10
+        
+
+
+group Build
+source https://api.nuget.org/v3/index.json
+framework: netstandard2.0
+github aardvark-platform/aardvark.fake:v5
+nuget Fake.DotNet.Cli
