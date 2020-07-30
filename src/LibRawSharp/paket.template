@@ -1,0 +1,8 @@
+type project
+authors krauthaufen
+owners krauthaufen
+projectUrl https://github.com/krauthaufen/LibRawSharp
+licenseUrl https://github.com/krauthaufen/LibRawSharp/blob/master/LICENSE
+description
+    Simple LibRaw Wrapper
+include-pdbs true
