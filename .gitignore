@@ -12,3 +12,5 @@ bin/Debug
 /.fake
 /.paket
 /Aardvark.log
+
+.ionide

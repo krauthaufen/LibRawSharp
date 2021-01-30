@@ -22,10 +22,10 @@ module internal LibRawNative =
         end
 
     [<DllImport("LibRawNative.dll")>]
-    extern RawImageHandle private lrLoad(string file)
+    extern RawImageHandle internal lrLoad(string file)
     
     [<DllImport("LibRawNative.dll")>]
-    extern void private lrFree(RawImageHandle image)
+    extern void internal lrFree(RawImageHandle image)
 
 type RawImage internal(handle : LibRawNative.RawImageHandle) =
     let mutable handle = handle

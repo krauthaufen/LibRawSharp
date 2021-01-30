@@ -8,7 +8,7 @@ open LibRaw
 let main argv = 
     Aardvark.Init()
 
-    use img = RawImage.Load @"C:\Users\Schorsch\Desktop\H1_7\IMG_7721.CR2"
+    use img = RawImage.Load @"/Users/hs/IMG_7721.CR2"
 
     Log.start "image"
     Log.line "make:      %s" img.Make

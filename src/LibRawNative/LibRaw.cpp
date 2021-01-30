@@ -1,5 +1,15 @@
+#define strnlen_s(data,cap) strnlen(data,cap)
+
+#ifdef __APPLE__
+#include "LibRaw.h"
+#define DllExport(t) extern "C" t
+#elif __GNUC__
+#include <libraw.h>
+#define DllExport(t) extern "C" t
+#else
 #include "pch.h"
 #include "LibRaw.h"
+#endif
 
 //
 //bool getSensorSize(int typ, float& w, float& h)
